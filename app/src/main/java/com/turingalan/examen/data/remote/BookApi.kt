@@ -22,7 +22,7 @@ interface BookApi {
      * con la anotación Headers
      */
     @Headers("Accept: application/json")
-    @GET("books")
+    @GET("/search.json")
     suspend fun getBooks(): BookResponse
 
     @Headers("Accept: application/json")

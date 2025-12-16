@@ -33,7 +33,7 @@ class BookRemoteDataSource @Inject constructor(
     override suspend fun readAll(): Result<List<Book>> {
         return try {
             val response = bookApi.getBooks()
-            val bookList = response.results.map { bookDto ->
+            val bookList = response.docs.map { bookDto ->
                 Book(
                     id = bookDto.id,
                     title = bookDto.title,
