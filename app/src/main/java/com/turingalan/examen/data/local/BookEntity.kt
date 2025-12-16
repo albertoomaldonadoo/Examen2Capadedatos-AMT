@@ -9,7 +9,7 @@ data class BookEntity(
     @PrimaryKey
     val id:String,
     val title:String = "",
-    val authors:List<String> = listOf(),
+    val authors:String = "",
     val publicationYear:Int = 9999,
 )
 
@@ -17,7 +17,7 @@ fun Book.toEntity(): BookEntity {
     return BookEntity(
         id = this.id,
         title = this.title,
-        authors = this.authors,
+        authors = this.authors.toString(),
         publicationYear = this.publicationYear
     )
 }
@@ -28,7 +28,7 @@ fun BookEntity.toModel(): Book {
     return Book(
         id = this.id,
         title = this.title,
-        authors = this.authors,
+        authors = listOf(this.authors),
         publicationYear = this.publicationYear
     )
 }

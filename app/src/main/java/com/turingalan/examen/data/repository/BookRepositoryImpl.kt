@@ -27,7 +27,7 @@ class BookRepositoryImpl @Inject constructor(
         return BookEntity(
             id = this.id,
             title = this.title,
-            authors = this.authors,
+            authors = this.authors.toString(),
             publicationYear = this.publicationYear
         )
     }
